@@ -1,0 +1,13 @@
+# Netlify Deployment Configuration
+
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+
+[context.production]
+  environment = { REACT_APP_FIREBASE_API_KEY = "your_key", REACT_APP_FIREBASE_PROJECT_ID = "your_id" }
